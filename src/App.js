@@ -16,6 +16,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          <p>Testando conexão</p>
         </a>
       </header>
     </div>
