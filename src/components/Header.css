@@ -4,3 +4,18 @@
     align-items: center;
     display: flex;
 }
+
+.header {
+    position: relative;
+}
+
+.background-image {
+    position: fixed;
+    width: 100%;
+    height: 70%;
+    background-image: url('../img/bg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
