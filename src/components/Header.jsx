@@ -1,35 +1,47 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css'
-import { Box } from "@chakra-ui/react"
+import { Box, Container } from "@chakra-ui/react"
 import { Center, Text, Link } from '@chakra-ui/layout';
-import { Button, ButtonGroup, Spacer } from '@chakra-ui/react'
+import { Button, ButtonGroup, Spacer, Image } from '@chakra-ui/react'
 import TypeIt from "typeit-react";
+import bgHome from '../img/bgHome.jpg';
 
 
 const Header = () => {
 
     const navigate = useNavigate()  
 
+    const LoginPickHandler = () => {
+        navigate('/login')
+    }
+
+    const HomePickHandler = () => {
+        navigate('/')
+    }
+
     return (  
-        <header>
-            <Box className="background-image">
+        <Box className='background-image'>
+            <Box>
                 <Center>
-                    <Box w="80%" h="60px" bg='gray.200' className='navBar' boxShadow='lg'>
-                        <Link pl='7' as='b' href='/' _hover={{textDecoration: 'none'}}>Agendify</Link>
+                    <Box w="100%" h="60px" className='navBar' boxShadow='lg'>
+                        <Link color='white' className='logo' _hover={{textDecoration: 'none'}}>Agendify</Link>
                         <Spacer/>
-                        <Button mr='7' colorScheme='teal'>Acessar</Button>
-                    </Box>
-                </Center>
-                <Center>
-                    <Box mt='20'>
-                        <Text className='titulo'>Sistema de Agendamento / Reserva
-                            
-                        </Text>
+                        <Link color='white' mr='10' as='b'>Sobre</Link>
+                        <Link color='white' mr='10' as='b'>Funcionalidades</Link>
+                        <Link color='white' mr='10' as='b'>Empresas</Link>
+                        <Button mr='7' colorScheme='teal' onClick={() => LoginPickHandler()}>Acessar</Button>
                     </Box>
                 </Center>
             </Box>
-        </header>
+            <Box className='titleBox'>
+                <TypeIt className='title' fontSize='5xl'>
+                    <p>SISTEMA DE AGENDAMENTO / RESERVAS</p>
+                    <p> PARA SUA EMPRESA</p>
+                    <Button>SOBRE AGENDIFY</Button>
+                </TypeIt>
+            </Box>
+        </Box>
     );
 }
 
